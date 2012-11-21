@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta name = "viewport" content = "initial-scale = 1.0"> 
+<style>
+  * {font-family: 'gill sans'}
+  p,table {font-size: 20px}
+  .pending { color: gold;}
+  .passed { color: green;}
+  
+  table {border: 1px solid black}
+</style>
+</head>
+
+<body>
+<h1>string-array</h1>
+<p>
+</p>
+<h2>example</h2>
+<p>
+
+</p>
+<p>
+view source to see it in action.
+or <a href="https://github.com/drewlesueur/string-array/blob/master/index.html">
+see source on github
+</a>
+</p>
+
+
+<script src="poor_modules/poor-module.js"></script>
+<script src="poor_modules/script-string.js"></script>
+<script src="string-array.js"></script>
+<script id="some-strings" type=".">
+here is some stuff
+other
+* and more
+  yet again
+new string
+</script>
+
+
+<script>
+  window.onerror = function (e) {
+    alert(e)
+    throw e
+    return false
+  }
+
+var script_string = poorModule("script-string")
+var string_array = poorModule("string-array")
+
+script_string("some-strings", function (err, str) {
+  
+  list = string_array(str)
+  console.log(list)
+})
+</script>
+
